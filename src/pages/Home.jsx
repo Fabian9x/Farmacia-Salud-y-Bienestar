@@ -29,6 +29,12 @@ const homeStructuredData = {
       logo: absoluteAsset('/logo.png'),
       image: absoluteAsset('/images/farmacia-local.jpg'),
       telephone: BUSINESS.whatsappDisplay,
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: BUSINESS.address,
+        addressCountry: 'EC',
+      },
+      openingHours: 'Mo-Su 08:00-22:00',
       sameAs: [BUSINESS.social.facebook, BUSINESS.social.tiktok],
       priceRange: '$',
       currenciesAccepted: 'USD',

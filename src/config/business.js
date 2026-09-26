@@ -7,10 +7,9 @@ export const BUSINESS = {
     facebook: 'https://www.facebook.com/profile.php?id=61594095577891',
     tiktok: 'https://www.tiktok.com/@user328004974',
   },
-  address: 'Dirección por configurar',
+  address: 'Callejón 45 y Rosendo Avilés',
   schedule: [
-    { days: 'Lunes - Viernes', hours: '08:00 - 20:00' },
-    { days: 'Sábados', hours: '08:00 - 18:00' },
+    { days: 'Todos los días', hours: '08:00 - 22:00' },
   ],
 }
 

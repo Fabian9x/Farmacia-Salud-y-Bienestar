@@ -62,7 +62,7 @@ const pages = [
     structuredData: {
       '@context': 'https://schema.org',
       '@graph': [
-        { '@type': 'Pharmacy', '@id': pharmacyId, name: 'Farmacia Salud y Bienestar', url: absoluteUrl('/'), logo: absoluteUrl('/logo.png'), image: absoluteUrl('/images/farmacia-local.jpg'), telephone: '+593985023640', sameAs: ['https://www.facebook.com/profile.php?id=61594095577891', 'https://www.tiktok.com/@user328004974'], priceRange: '$', currenciesAccepted: 'USD' },
+        { '@type': 'Pharmacy', '@id': pharmacyId, name: 'Farmacia Salud y Bienestar', url: absoluteUrl('/'), logo: absoluteUrl('/logo.png'), image: absoluteUrl('/images/farmacia-local.jpg'), telephone: '+593985023640', address: { '@type': 'PostalAddress', streetAddress: 'Callejón 45 y Rosendo Avilés', addressCountry: 'EC' }, openingHours: 'Mo-Su 08:00-22:00', sameAs: ['https://www.facebook.com/profile.php?id=61594095577891', 'https://www.tiktok.com/@user328004974'], priceRange: '$', currenciesAccepted: 'USD' },
         { '@type': 'WebSite', '@id': `${absoluteUrl('/')}#website`, url: absoluteUrl('/'), name: 'Farmacia Salud y Bienestar', inLanguage: 'es-EC', publisher: { '@id': pharmacyId } },
       ],
     },

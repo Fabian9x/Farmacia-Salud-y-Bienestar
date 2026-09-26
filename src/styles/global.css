@@ -102,8 +102,8 @@ p { text-wrap: pretty; }
 .products-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .product-card { display: flex; min-width: 0; flex-direction: column; overflow: hidden; border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--white); transition: transform 220ms var(--ease-out), border-color 220ms, box-shadow 220ms; }
 .product-card:hover { border-color: oklch(0.43 0.15 251 / .28); box-shadow: var(--shadow-md); transform: translateY(-4px); }
-.product-card__image-wrap { position: relative; display: grid; height: 222px; place-items: center; overflow: hidden; background: var(--background-soft); }
-.product-card__image-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 320ms var(--ease-out); }
+.product-card__image-wrap { position: relative; display: grid; height: 246px; place-items: center; overflow: hidden; padding: 22px 20px 12px; background: transparent; }
+.product-card__image-wrap img { width: 100%; height: 100%; object-fit: contain; transition: transform 320ms var(--ease-out); }
 .product-card:hover .product-card__image-wrap img { transform: scale(1.025); }
 .product-card__category { position: absolute; top: 13px; left: 13px; max-width: calc(100% - 26px); padding: 6px 10px; border-radius: 999px; background: oklch(1 0 0 / .94); color: var(--primary-dark); font-size: .78rem; font-weight: 700; box-shadow: 0 4px 12px oklch(0.25 0.04 251 / .08); }
 .product-card__content { display: flex; flex: 1; flex-direction: column; padding: 21px; }
@@ -196,8 +196,8 @@ p { text-wrap: pretty; }
 .product-breadcrumbs a:hover { color: var(--secondary-dark); }
 .product-breadcrumbs svg { width: 18px; }
 .product-detail { display: grid; grid-template-columns: 1fr .9fr; align-items: center; gap: clamp(42px, 7vw, 92px); padding-block: clamp(30px, 5vw, 70px) clamp(70px, 8vw, 110px); }
-.product-detail__visual { position: relative; display: flex; height: clamp(560px, 48vw, 680px); align-items: center; justify-content: center; overflow: hidden; padding: clamp(8px, 2vw, 24px); background: var(--white); }
-.product-detail__visual img { display: block; width: 100%; height: 100%; min-width: 0; min-height: 0; object-fit: contain; border-radius: 12px; }
+.product-detail__visual { position: relative; display: flex; height: clamp(560px, 48vw, 680px); align-items: center; justify-content: center; overflow: hidden; padding: clamp(16px, 2.5vw, 30px); background: transparent; }
+.product-detail__visual img { display: block; width: 100%; height: 100%; min-width: 0; min-height: 0; object-fit: contain; }
 .product-detail__category { position: absolute; top: 18px; left: 18px; z-index: 2; padding: 7px 12px; border-radius: 999px; background: var(--white); color: var(--primary-dark); font-size: .84rem; font-weight: 700; box-shadow: var(--shadow-sm); }
 .stock-state { display: flex; align-items: center; gap: 8px; margin-bottom: 13px; font-size: .95rem; font-weight: 700; }
 .stock-state span { width: 10px; height: 10px; border-radius: 50%; background: currentColor; box-shadow: 0 0 0 4px color-mix(in oklch, currentColor 15%, transparent); }
@@ -244,7 +244,7 @@ p { text-wrap: pretty; }
 .icon-button:hover { border-color: var(--primary); background: var(--primary-soft); }
 .cart-lines { display: flex; min-height: 0; flex: 1; flex-direction: column; gap: 0; overflow-y: auto; padding: 0 24px; }
 .cart-line { display: grid; grid-template-columns: 82px 1fr; gap: 14px; padding-block: 20px; border-bottom: 1px solid var(--border); }
-.cart-line > img { width: 82px; height: 76px; border-radius: 10px; object-fit: cover; background: var(--background-soft); }
+.cart-line > img { width: 82px; height: 76px; padding: 4px; border-radius: 10px; object-fit: contain; background: transparent; }
 .cart-line__details { min-width: 0; }
 .cart-line h3 { margin-bottom: 2px; font-family: 'Atkinson Hyperlegible'; font-size: 1rem; line-height: 1.2; }
 .cart-line p { margin-bottom: 6px; color: var(--text-secondary); font-size: .85rem; }
@@ -338,7 +338,7 @@ p { text-wrap: pretty; }
   .section-heading-row .text-link { margin-bottom: 30px; }
   .products-grid, .products-grid--catalog { grid-template-columns: 1fr; }
   .product-card { width: min(100%, 420px); margin-inline: auto; }
-  .product-card__image-wrap { height: 240px; }
+  .product-card__image-wrap { height: 280px; padding: 24px 22px 14px; }
   .whatsapp-banner__inner { flex-wrap: wrap; }
   .whatsapp-banner__icon { width: 46px; height: 46px; }
   .whatsapp-banner__inner > div:nth-child(2) { width: calc(100% - 70px); }
