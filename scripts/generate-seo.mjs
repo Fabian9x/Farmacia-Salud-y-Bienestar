@@ -6,7 +6,7 @@ import { productPath } from '../src/utils/productPath.js'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const dist = path.join(root, 'dist')
-const siteUrl = (process.env.VITE_SITE_URL || 'https://fabian9x.github.io/Farmacia-Salud-y-Bienestar').replace(/\/$/, '')
+const siteUrl = (process.env.VITE_SITE_URL || 'https://farmaciasaludybienestar.neonbet.pro').replace(/\/$/, '')
 const template = await readFile(path.join(dist, 'index.html'), 'utf8')
 const today = new Date().toISOString().slice(0, 10)
 

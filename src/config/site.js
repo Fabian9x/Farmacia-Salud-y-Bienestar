@@ -1,4 +1,4 @@
-const fallbackSiteUrl = 'https://fabian9x.github.io/Farmacia-Salud-y-Bienestar'
+const fallbackSiteUrl = 'https://farmaciasaludybienestar.neonbet.pro'
 
 export const SITE_URL = (import.meta.env.VITE_SITE_URL || fallbackSiteUrl).replace(/\/$/, '')
 
