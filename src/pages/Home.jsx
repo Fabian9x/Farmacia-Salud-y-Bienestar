@@ -4,8 +4,10 @@ import CategoryCard from '../components/CategoryCard'
 import Hero from '../components/Hero'
 import ProductCard from '../components/ProductCard'
 import SectionTitle from '../components/SectionTitle'
+import Seo from '../components/Seo'
 import WhatsAppIcon from '../components/WhatsAppIcon'
 import { BUSINESS, GENERAL_WHATSAPP_MESSAGE } from '../config/business'
+import { absoluteAsset, absoluteUrl } from '../config/site'
 import { categories } from '../data/categories'
 import { products } from '../data/products'
 import { openWhatsApp } from '../utils/whatsapp'
@@ -16,11 +18,43 @@ const benefits = [
   { icon: PackageCheck, title: 'Pedido fácil', text: 'Termina por WhatsApp.' },
 ]
 
+const homeStructuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Pharmacy',
+      '@id': `${absoluteUrl('/')}#pharmacy`,
+      name: BUSINESS.name,
+      url: absoluteUrl('/'),
+      logo: absoluteAsset('/logo.png'),
+      image: absoluteAsset('/images/farmacia-local.jpg'),
+      telephone: BUSINESS.whatsappDisplay,
+      sameAs: [BUSINESS.social.facebook, BUSINESS.social.tiktok],
+      priceRange: '$',
+      currenciesAccepted: 'USD',
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${absoluteUrl('/')}#website`,
+      url: absoluteUrl('/'),
+      name: BUSINESS.name,
+      inLanguage: 'es-EC',
+      publisher: { '@id': `${absoluteUrl('/')}#pharmacy` },
+    },
+  ],
+}
+
 export default function Home() {
   const featured = products.filter((product) => product.featured).slice(0, 8)
 
   return (
     <>
+      <Seo
+        title="Farmacia Salud y Bienestar | Productos y pedidos por WhatsApp"
+        description="Compra medicamentos y productos para tu bienestar. Revisa precios, agrega al carrito y finaliza tu pedido por WhatsApp."
+        image={absoluteAsset('/images/farmacia-local.jpg')}
+        structuredData={homeStructuredData}
+      />
       <Hero />
 
       <section className="benefits" aria-label="Beneficios">

@@ -2,14 +2,30 @@ import { Search, SlidersHorizontal, X } from 'lucide-react'
 import { useMemo, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import ProductCard from '../components/ProductCard'
+import Seo from '../components/Seo'
 import { GENERAL_WHATSAPP_MESSAGE } from '../config/business'
+import { absoluteAsset, absoluteUrl } from '../config/site'
 import { categories } from '../data/categories'
 import { products } from '../data/products'
 import { openWhatsApp } from '../utils/whatsapp'
 import WhatsAppIcon from '../components/WhatsAppIcon'
+import { productPath } from '../utils/productPath'
 
 function normalize(value) {
   return value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
+}
+
+const catalogStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Catálogo de Farmacia Salud y Bienestar',
+  numberOfItems: products.length,
+  itemListElement: products.map((product, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    url: absoluteUrl(productPath(product)),
+    name: product.name,
+  })),
 }
 
 export default function Products() {
@@ -34,6 +50,13 @@ export default function Products() {
 
   return (
     <div className="catalog-page">
+      <Seo
+        title="Catálogo de productos | Farmacia Salud y Bienestar"
+        description="Explora medicamentos, higiene, vitaminas y productos de bienestar con precios visibles. Arma tu carrito y pide por WhatsApp."
+        path="/productos"
+        image={absoluteAsset('/logo.png')}
+        structuredData={catalogStructuredData}
+      />
       <section className="catalog-hero">
         <div className="container catalog-hero__inner">
           <div><h1>Nuestros productos</h1><p>Explora el catálogo de Farmacia Salud y Bienestar.</p></div>

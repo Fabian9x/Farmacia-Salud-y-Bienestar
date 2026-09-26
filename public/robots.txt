@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://fabian9x.github.io/Farmacia-Salud-y-Bienestar/sitemap.xml
