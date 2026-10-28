@@ -184,6 +184,9 @@ p { text-wrap: pretty; }
 .footer-contact svg { margin-top: 4px; flex: none; color: var(--secondary); }
 .footer-bottom { display: flex; justify-content: space-between; gap: 20px; padding-block: 20px; border-top: 1px solid oklch(1 0 0 / .11); font-size: .85rem; }
 .footer-bottom p { margin: 0; }
+.footer-bottom__links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px 20px; }
+.footer-bottom__links a { color: var(--white); font-weight: 700; }
+.footer-bottom__links a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .floating-whatsapp { position: fixed; right: 20px; bottom: 20px; z-index: var(--z-menu); display: grid; width: 52px; height: 52px; place-items: center; border: 3px solid var(--white); border-radius: 50%; background: var(--secondary-dark); color: var(--white); box-shadow: 0 10px 28px oklch(0.2 0.035 251 / .24); cursor: pointer; transition: transform 180ms var(--ease-out), background 180ms; }
 .floating-whatsapp:hover { background: var(--secondary); transform: translateY(-3px); }
 .floating-whatsapp::before { position: absolute; right: calc(100% + 9px); padding: 6px 9px; border-radius: 7px; content: attr(data-tooltip); background: var(--primary-dark); color: var(--white); font-size: .78rem; opacity: 0; pointer-events: none; transform: translateX(6px); transition: opacity 160ms, transform 160ms; white-space: nowrap; }
@@ -191,6 +194,18 @@ p { text-wrap: pretty; }
 
 /* Product detail */
 .product-page { background: var(--white); }
+
+/* Legal pages */
+.legal-hero { padding-block: clamp(54px, 7vw, 88px); background: var(--primary-dark); color: var(--white); }
+.legal-hero__inner > p { margin-bottom: 9px; color: oklch(1 0 0 / .72); font-weight: 700; }
+.legal-hero h1 { max-width: 760px; margin-bottom: 12px; color: var(--white); font-size: clamp(2.6rem, 5vw, 4.8rem); line-height: 1; letter-spacing: -.035em; }
+.legal-hero span { color: oklch(1 0 0 / .76); font-size: .94rem; }
+.legal-content { max-width: 880px; padding-block: clamp(54px, 7vw, 92px); }
+.legal-content section + section { margin-top: 38px; padding-top: 38px; border-top: 1px solid var(--border); }
+.legal-content h2 { margin-bottom: 12px; font-size: clamp(1.55rem, 2.5vw, 2.15rem); }
+.legal-content p { max-width: 72ch; margin-bottom: 12px; color: var(--text-secondary); }
+.legal-content a { color: var(--primary); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.legal-content a:hover { color: var(--secondary-dark); }
 .product-breadcrumbs { display: flex; align-items: center; gap: 10px; padding-block: 24px; color: var(--text-secondary); font-size: .94rem; }
 .product-breadcrumbs a { display: inline-flex; align-items: center; gap: 7px; color: var(--primary); font-weight: 700; }
 .product-breadcrumbs a:hover { color: var(--secondary-dark); }
@@ -353,6 +368,7 @@ p { text-wrap: pretty; }
   .footer-grid { grid-template-columns: 1fr; }
   .footer-contact { grid-column: auto; }
   .footer-bottom { flex-direction: column; }
+  .footer-bottom__links { justify-content: flex-start; }
   .floating-whatsapp { right: calc(14px + env(safe-area-inset-right)); bottom: calc(14px + env(safe-area-inset-bottom)); }
   .product-breadcrumbs { align-items: flex-start; flex-wrap: wrap; padding-block: 18px; }
   .product-detail { padding-top: 8px; padding-bottom: 72px; }

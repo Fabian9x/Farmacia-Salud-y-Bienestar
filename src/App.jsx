@@ -3,6 +3,7 @@ import Layout from './components/Layout'
 import Home from './pages/Home'
 import Products from './pages/Products'
 import ProductDetail from './pages/ProductDetail'
+import Privacy from './pages/Privacy'
 import { CartProvider } from './context/CartContext'
 
 export default function App() {
@@ -13,6 +14,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/productos" element={<Products />} />
           <Route path="/producto/:id" element={<ProductDetail />} />
+          <Route path="/privacidad" element={<Privacy />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Layout>

@@ -75,6 +75,14 @@ const pages = [
     image: absoluteUrl('/logo.png'),
     structuredData: { '@context': 'https://schema.org', '@type': 'ItemList', name: 'Catálogo de Farmacia Salud y Bienestar', numberOfItems: products.length, itemListElement: products.map((product, index) => ({ '@type': 'ListItem', position: index + 1, url: productUrl(product), name: product.name })) },
   },
+  {
+    route: '/privacidad',
+    title: 'Política de privacidad | Farmacia Salud y Bienestar',
+    description: 'Conoce cómo Farmacia Salud y Bienestar utiliza datos, almacenamiento local, servicios externos y publicidad en este sitio web.',
+    url: absoluteUrl('/privacidad'),
+    image: absoluteUrl('/logo.png'),
+    structuredData: { '@context': 'https://schema.org', '@type': 'WebPage', name: 'Política de privacidad', inLanguage: 'es-EC' },
+  },
 ]
 
 for (const product of products) {

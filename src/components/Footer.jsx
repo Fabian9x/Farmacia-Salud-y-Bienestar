@@ -56,7 +56,10 @@ export default function Footer() {
       </div>
       <div className="container footer-bottom">
         <p>© 2026 Farmacia Salud y Bienestar. Todos los derechos reservados.</p>
-        <p>Precios y disponibilidad sujetos a confirmación.</p>
+        <div className="footer-bottom__links">
+          <Link to="/privacidad">Privacidad y cookies</Link>
+          <p>Precios y disponibilidad sujetos a confirmación.</p>
+        </div>
       </div>
     </footer>
   )
